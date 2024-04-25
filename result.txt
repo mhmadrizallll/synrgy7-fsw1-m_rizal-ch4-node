@@ -1,0 +1,2 @@
+Luas permukaan balok = 592, 
+Volume balok = 960
