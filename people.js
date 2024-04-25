@@ -81,11 +81,10 @@ const readData = () => {
 const getData = () => {
   fs.readFile("./people.txt", "utf8", (err, data) => {
     if (err) throw err;
-    // ambil nama dari data
+    // ambil nama dari data berbentuk array of string
     const people = JSON.parse(data);
-    people.forEach((person) => {
-      console.log(person.name);
-    });
+    const result = people.map((person) => person.name);
+    console.log(result);
   });
 };
 
