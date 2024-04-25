@@ -1,7 +1,7 @@
 const kubus = require("./kubus.js");
 const { volumeBalok, luasPermukaanBalok } = require("./balok.js");
 const { luasPermukaanPrisma, volumePrisma } = require("./prisma.js");
-const saveData = require("./people.js");
+const { writeData, readData } = require("./people.js");
 const fs = require("fs");
 
 console.log(kubus(8, 12));
@@ -22,4 +22,5 @@ fs.writeFileSync(
 const data = fs.readFileSync("./result.txt", "utf8");
 console.log(data);
 
-saveData();
+writeData();
+readData();

@@ -63,12 +63,14 @@ const people = [
   },
 ];
 
-const saveData = () => {
+const writeData = () => {
   fs.writeFile("./people.txt", JSON.stringify(people), "utf8", (err) => {
     if (err) throw err;
     console.log("The file has been saved!");
   });
+};
 
+const readData = () => {
   fs.readFile("./people.txt", "utf8", (err, data) => {
     if (err) throw err;
     const people = JSON.parse(data);
@@ -76,4 +78,4 @@ const saveData = () => {
   });
 };
 
-module.exports = saveData;
+module.exports = { writeData, readData };
