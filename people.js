@@ -78,4 +78,28 @@ const readData = () => {
   });
 };
 
-module.exports = { writeData, readData };
+const getData = () => {
+  fs.readFile("./people.txt", "utf8", (err, data) => {
+    if (err) throw err;
+    // ambil nama dari data
+    const people = JSON.parse(data);
+    people.forEach((person) => {
+      console.log(person.name);
+    });
+  });
+};
+
+const getDetail = (id) => {
+  fs.readFile("./people.txt", "utf8", (err, data) => {
+    if (err) throw err;
+
+    const people = JSON.parse(data);
+    people.forEach((person) => {
+      if (person.id === id) {
+        console.log(person);
+      }
+    });
+  });
+};
+
+module.exports = { writeData, readData, getData, getDetail };

@@ -1,7 +1,7 @@
 const kubus = require("./kubus.js");
 const { volumeBalok, luasPermukaanBalok } = require("./balok.js");
 const { luasPermukaanPrisma, volumePrisma } = require("./prisma.js");
-const { writeData, readData } = require("./people.js");
+const { writeData, readData, getData, getDetail } = require("./people.js");
 const fs = require("fs");
 
 console.log(kubus(8, 12));
@@ -24,3 +24,5 @@ console.log(data);
 
 writeData();
 readData();
+getData();
+getDetail(3);
